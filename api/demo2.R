@@ -9,7 +9,7 @@
 
 library(plumber)
 
-#* @apiTitle Plumber Example API for R Conference Malaysia 2020
+#* @apiTitle Plumber Example API for BNM DS Practitioner KSS
 
 #* Index Page
 #* @serializer html
@@ -18,9 +18,8 @@ function(){
   index_page = "<html><body>
   <div style = 'text-align:center'>
   <h1>Demo</h1>
-  <h2>Deploying Models as Web Service using Plumber</h2>
-  <h4><i>A walkthrough with RStudio, Heroku and Amazon Web Services</i></h4>
-  <h5>R Conference Malaysia 2020</h5>
+  <h2>Unsung hero of the connected world - APIs</h2>
+  <h4><i>A walkthrough with Rstudio and Plumber</i></h4>
   </div>
   </body></html>
   "
@@ -63,15 +62,15 @@ function(req){
 #* @param msg The message to echo
 #* @get /echo
 function(msg = "") {
-    list(msg = paste0("The message is: '", msg, "'"))
+  list(msg = paste0("The message is: '", msg, "'"))
 }
 
 #* Plot a histogram
 #* @serializer png
 #* @get /plot
 function() {
-    rand <- rnorm(100)
-    hist(rand)
+  rand <- rnorm(100)
+  hist(rand)
 }
 
 #* Return the sum of two numbers
@@ -79,5 +78,5 @@ function() {
 #* @param b The second number to add
 #* @post /sum
 function(a, b) {
-    as.numeric(a) + as.numeric(b)
+  as.numeric(a) + as.numeric(b)
 }
